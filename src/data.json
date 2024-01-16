@@ -1,0 +1,107 @@
+{
+  "initialNodes": [
+    {
+      "width": 312,
+      "height": 165,
+      "id": "1",
+      "type": "User",
+      "position": {
+        "x": 688.8006767858396,
+        "y": -325.77168648500606
+      },
+      "data": {
+        "name": "Esmeralda Molina Gomez",
+        "rol": "Secretaria General",
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+      },
+      "positionAbsolute": {
+        "x": 688.8006767858396,
+        "y": -325.77168648500606
+      },
+      "selected": true,
+      "dragging": false
+    },
+    {
+      "width": 312,
+      "height": 130,
+      "id": "2",
+      "type": "User",
+      "position": {
+        "x": 499.70155009451787,
+        "y": 86.84582230623818
+      },
+      "data": {
+        "name": "Jhon Doe",
+        "rol": "Director de Operaciones",
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+      },
+      "positionAbsolute": {
+        "x": 499.70155009451787,
+        "y": 86.84582230623818
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "width": 312,
+      "height": 130,
+      "id": "3",
+      "type": "User",
+      "position": {
+        "x": 904.1923629489602,
+        "y": 86.8458223062382
+      },
+      "data": {
+        "name": "Jhon Doe",
+        "rol": "Gerente de Marketing",
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+      },
+      "positionAbsolute": {
+        "x": 904.1923629489602,
+        "y": 86.8458223062382
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "width": 312,
+      "height": 130,
+      "id": "4",
+      "type": "User",
+      "position": {
+        "x": 499.701550094518,
+        "y": 372.51909262759926
+      },
+      "data": {
+        "name": "Jhon Doe",
+        "rol": "Gerente de Recursos Humanos",
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+      },
+      "positionAbsolute": {
+        "x": 499.701550094518,
+        "y": 372.51909262759926
+      },
+      "dragging": false
+    }
+  ],
+  "initialEdges": [
+    {
+      "id": "SC1-2",
+      "type": "step",
+      "source": "1",
+      "target": "2"
+    },
+    {
+      "id": "SC1-3",
+      "type": "step",
+      "source": "1",
+      "target": "3"
+    },
+    {
+      "id": "SC2-4",
+      "type": "step",
+      "source": "2",
+      "target": "4"
+    }
+  ]
+}
