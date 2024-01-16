@@ -47,7 +47,11 @@ const saveDataToJson = async () => {
   }
 }
 
-app.use(cors('*'))
+const corsOptions = {
+  origin: '*',
+  optionSuccessStatus: 200
+}
+app.use(cors(corsOptions))
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
