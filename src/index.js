@@ -5,7 +5,7 @@ import cors from 'cors'
 import fs from 'fs/promises'
 import { Server } from 'socket.io'
 
-const port = 3002
+const port = process.env.PORT ?? 3000
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
