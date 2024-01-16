@@ -3,9 +3,13 @@ import logger from 'morgan'
 import http from 'http'
 import cors from 'cors'
 import fs from 'fs/promises'
+import dotenv from 'dotenv'
 import { Server } from 'socket.io'
 
+dotenv.config()
+
 const port = process.env.PORT ?? 3000
+
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
