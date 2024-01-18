@@ -67,34 +67,32 @@ io.on('connection', (socket) => {
     userViewports[socket.id] = { x: 0, y: 0, zoom: 1 }
   }
 
-  socket.emit('initialData', {
+  socket.on('canvasUpdate', (data) => {
+    console.log('canvas update')
+    io.emit('Canvas', {
+      nodes: data.nodes,
+      edges: data.edges
+    })
+  })
+
+  socket.on('reloadCanvas', () => {
+    console.log('reload Canvas')
+    io.emit('Canvas', {
+      nodes: initialNodes,
+      edges: initialEdges,
+      userInfo,
+      viewport: userViewports[socket.id]
+    })
+  })
+
+  socket.emit('Canvas', {
     nodes: initialNodes,
     edges: initialEdges,
     userInfo,
     viewport: userViewports[socket.id]
   })
 
-  socket.on('canvas', (data) => {
-    console.log('Evento "canvas" recibido con parámetros:', data)
-
-    userViewports[socket.id] = data.viewport
-
-    io.emit('canvasConfig', {
-      config: data.config,
-      viewport: data.viewport,
-      userId: socket.id
-    })
-  })
-
   socket.on('save', async (data) => {
-    if (data.viewport) {
-      userViewports[socket.id] = data.viewport
-      io.emit('viewportUpdated', {
-        viewport: data.viewport,
-        userId: socket.id
-      })
-    }
-
     const nodesChanged = JSON.stringify(data.nodes) !== JSON.stringify(initialNodes)
     const edgesChanged = JSON.stringify(data.edges) !== JSON.stringify(initialEdges)
 
@@ -109,20 +107,15 @@ io.on('connection', (socket) => {
         initialEdges = data.edges
       }
 
-      await saveDataToJson()
-
-      io.emit('dataUpdated', {
+      io.emit('canvasUpdate', {
         nodes: initialNodes,
         edges: initialEdges
       })
+
+      await saveDataToJson()
     } else {
       console.log('No se detectaron cambios en nodos ni relaciones.')
     }
-  })
-
-  socket.on('dataUpdated', (data) => {
-    initialNodes = data.nodes
-    initialEdges = data.edges
   })
 
   socket.on('disconnect', () => {

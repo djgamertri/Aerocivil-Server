@@ -6,17 +6,18 @@
       "id": "1",
       "type": "User",
       "position": {
-        "x": 688.8006767858396,
-        "y": -325.77168648500606
+        "x": 709.2442064290111,
+        "y": -339.4214346486305
       },
       "data": {
         "name": "Esmeralda Molina Gomez",
         "rol": "Secretaria General",
-        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg",
+        "typeUser": "Planta"
       },
       "positionAbsolute": {
-        "x": 688.8006767858396,
-        "y": -325.77168648500606
+        "x": 709.2442064290111,
+        "y": -339.4214346486305
       },
       "selected": true,
       "dragging": false
@@ -33,7 +34,8 @@
       "data": {
         "name": "Jhon Doe",
         "rol": "Director de Operaciones",
-        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg",
+        "typeUser": "Planta"
       },
       "positionAbsolute": {
         "x": 499.70155009451787,
@@ -54,7 +56,8 @@
       "data": {
         "name": "Jhon Doe",
         "rol": "Gerente de Marketing",
-        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg",
+        "typeUser": "Planta"
       },
       "positionAbsolute": {
         "x": 904.1923629489602,
@@ -75,7 +78,8 @@
       "data": {
         "name": "Jhon Doe",
         "rol": "Gerente de Recursos Humanos",
-        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg"
+        "img": "https://economia3.com/wp-content/uploads/2019/12/Natalia-Juarranz-EQUIPO-HUMANO.jpg",
+        "typeUser": "Contratista"
       },
       "positionAbsolute": {
         "x": 499.701550094518,
