@@ -63,6 +63,11 @@ app.use(express.json())
 io.on('connection', (socket) => {
   console.log('Cliente conectado:', socket.id)
 
+  const SaveInterval = setInterval(() => {
+    console.log('intervalo')
+    socket.emit('SaveInterval', { message: 'Guardando la informacion del canvas' })
+  }, 10000)
+
   if (!userViewports[socket.id]) {
     userViewports[socket.id] = { x: 0, y: 0, zoom: 1 }
   }
@@ -120,6 +125,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('Cliente desconectado:', socket.id)
+    clearInterval(SaveInterval)
     delete userViewports[socket.id]
   })
 })
