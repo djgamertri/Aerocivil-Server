@@ -60,6 +60,18 @@ app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+app.get('/getNode/:id', (req, res) => {
+  const nodeId = req.params.id
+
+  const foundNode = initialNodes.find(node => node.id === nodeId)
+
+  if (foundNode) {
+    res.status(200).json(foundNode.data)
+  } else {
+    res.status(404).json({ message: 'Node not found' })
+  }
+})
+
 io.on('connection', (socket) => {
   console.log('Cliente conectado:', socket.id)
 
